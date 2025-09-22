@@ -89,6 +89,8 @@ export const FileUpload = ({ onScan }: FileUploadProps) => {
   };
 
   const handleStartScan = () => {
+    console.log("Start Security Scan button clicked", { filesCount: files.length });
+    
     if (files.length === 0) {
       toast({
         title: "No Files",
@@ -98,6 +100,7 @@ export const FileUpload = ({ onScan }: FileUploadProps) => {
       return;
     }
     
+    console.log("Calling onScan function");
     onScan();
     toast({
       title: "Scan Started",

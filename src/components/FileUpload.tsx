@@ -131,7 +131,11 @@ export const FileUpload = ({ onScan }: FileUploadProps) => {
             Supports multiple files and nested project structures.
           </p>
           <div className="flex gap-2">
-            <Button variant="default">
+            <div className="relative">
+              <Button variant="default">
+                <FolderOpen className="h-4 w-4 mr-2" />
+                Browse Files
+              </Button>
               <input
                 type="file"
                 multiple
@@ -139,9 +143,7 @@ export const FileUpload = ({ onScan }: FileUploadProps) => {
                 onChange={handleFileSelect}
                 className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
               />
-              <FolderOpen className="h-4 w-4 mr-2" />
-              Browse Files
-            </Button>
+            </div>
             <Button variant="outline">
               <FileText className="h-4 w-4 mr-2" />
               Example pom.xml
